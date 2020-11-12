@@ -41,6 +41,7 @@ end
 group :test do
   gem 'capybara'
   gem 'selenium-webdriver', '~> 3.142', '>= 3.142.7'
+  gem 'database_cleaner', '~> 1.8', '>= 1.8.5'
 end
 
 group :development do

@@ -80,6 +80,7 @@ GEM
     childprocess (3.0.0)
     concurrent-ruby (1.1.7)
     crass (1.0.6)
+    database_cleaner (1.8.5)
     diff-lcs (1.4.4)
     dotenv (2.7.6)
     dotenv-rails (2.7.6)
@@ -229,6 +230,7 @@ DEPENDENCIES
   bootstrap (~> 4.4, >= 4.4.1)
   byebug
   capybara
+  database_cleaner (~> 1.8, >= 1.8.5)
   dotenv-rails (~> 2.2)
   jbuilder (~> 2.7)
   listen (~> 3.2)
