@@ -29,6 +29,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'bootstrap', '~> 4.4', '>= 4.4.1'
+gem 'devise', '~> 4.7', '>= 4.7.3'
 gem 'dotenv-rails', '~> 2.2'
 gem 'pg', '~> 1.2', '>= 1.2.3'
 
