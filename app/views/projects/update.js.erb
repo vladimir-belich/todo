@@ -1,0 +1,6 @@
+<% unless @project.errors.any? %>
+  $('#modal-window').modal('hide');
+  $('#<%= "pr_#{@project.id}" %>').html("<%= j render @project %>");
+<% else %>
+  $('#flash_message').html("<%= @flash_message %>");
+<% end %>

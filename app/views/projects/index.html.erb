@@ -1,0 +1,21 @@
+<div id="modal-window" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+
+<div class="container">
+  <div class="text-center">
+    <h3>TODO LISTS</h3>
+    </br>
+  </div>
+
+  <div id="todo">
+  <% @projects.each do |project| %>
+    <div id=<%= "pr_#{project.id}" %> >
+      <%= render project %>
+    </div>
+  <% end %>
+  </div>
+
+  <div class="text-center">
+    <%= link_to "Add TODO list", new_project_path, id: "btn_add_todo", remote: true, class: "btn btn-primary" %>
+      </div>
+  </div>
+</div>

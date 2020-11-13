@@ -1,0 +1,24 @@
+<div class="modal-dialog modal-md">
+  <div class="modal-content">
+    <div class="modal-body">
+      <h5 class="modal-title">
+        <% if @project.new_record? %>
+          Create project
+        <% else %>
+          Edit project
+        <% end %>
+      </h5>
+      <div id="flash_message" style="color: red;"></div>
+      <%= form_with model: @project do |form| %>
+        <div class="form-group">
+          <%= form.label :name %><br/>
+          <%= form.text_field :name, required: true, class: "form-control" %>
+        </div>
+        <div class="actions">
+          <%= form.button "Save", class: "btn btn-primary", name: "user_id", value: current_user.id %>
+          <%= button_tag "Close", class: "btn btn-secondary", data: { dismiss: "modal" } %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
