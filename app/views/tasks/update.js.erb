@@ -1,0 +1,6 @@
+<% unless @task.errors.any? %>
+  $('#modal-window').modal('hide');
+  $('#<%= "pr_#{@task.project_id}" %>').html("<%= j render @project %>");
+<% else %>
+  $('#flash_message').html("<%= @flash_message %>");
+<% end %>

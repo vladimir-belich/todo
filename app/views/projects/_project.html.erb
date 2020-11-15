@@ -1,0 +1,26 @@
+<div class="row justify-content-md-center">
+    <table style="border: 1px solid grey;">
+      <tr style="background-color: rgb(100,160,210); height: 48px">
+
+        <td style="width: 30px;">
+          <%= image_tag("project_note.svg") %>
+        </td>
+        <td style="width: 350px;">
+          <%= project.name %>
+        </td>
+        <td style="width: 6px;"></td>
+        <td style="width: 27px;">
+          <%= link_to image_tag("pencil.png"), edit_project_path(project),
+                id: 'edit_project_' + project.id.to_s, remote: true %>
+        </td>
+        <td style="width: 27px;">
+          <%= link_to image_tag("trash.png"), project, id: 'del_project_' + project.id.to_s,
+                data: { confirm: 'Are you sure?' }, method: :delete, remote: true %>
+        </td>
+      </tr>
+
+      <%= render 'projects/form_add_task', project: project %>
+      <%= render project.tasks %>
+    </table>
+</div>
+<div class="row" style="height: 30px"></div>
