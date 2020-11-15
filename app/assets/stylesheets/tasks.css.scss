@@ -1,8 +1,32 @@
-    tr {
+tr {
     transition: 1s linear;
     height: 45px;
    }
-   tr:hover {
+tr:hover {
     background: #FAF3D2;
     height: 45px;
    }
+
+@media only screen and (min-width:310px) {
+  .add_task {
+    width: 65%
+    }
+}
+
+@media only screen and (min-width: 360px) {
+  .add_task {
+     width: 70%
+    }
+}
+
+@media only screen and (min-width:410px) {
+  .add_task {
+    width: 74%
+    }
+}
+
+@media only screen and (min-width: 450px) {
+  .add_task {
+    width: 76%
+    }
+}
