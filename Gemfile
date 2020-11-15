@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.3'
+ruby '2.7.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
@@ -30,6 +30,13 @@ gem 'bootstrap', '~> 4.4', '>= 4.4.1'
 gem 'devise', '~> 4.7', '>= 4.7.3'
 gem 'dotenv-rails', '~> 2.2'
 gem 'pg', '~> 1.2', '>= 1.2.3'
+
+group :development, :production do
+  gem 'capistrano', '~> 3.11'
+  gem 'capistrano-passenger', '~> 0.2.0'
+  gem 'capistrano-rails', '~> 1.4'
+  gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.4'
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
