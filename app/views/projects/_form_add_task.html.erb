@@ -1,0 +1,14 @@
+<tr style="background-color: lightgrey; height: 48px;">
+  <td>
+    <%= image_tag("plus.png") %>
+  </td>
+  <td colspan="4">
+    <%= form_with scope: :task, url: tasks_path(project_id: project.id) do |form|%>
+      <%= form.text_field :name, size: 29, required: true, id: "new_task_name",
+            placeholder: "Start typing here to create a task...", value: "" %>
+      <%= form.button "Add Task", class: "btn btn-success" %>
+	<% end %>
+  </td>
+  </td>
+  </td>
+</tr>

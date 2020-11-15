@@ -1,0 +1,30 @@
+<tr id=<%= "tsk_#{task.id}" %> >
+  <td style="width: 20px;">
+  <%#= form_with model: task do |form| %>
+    <%#= form.check_box :status, data: { remote: true, url: set_status_task_path(task), method: :patch } %>
+  <%# end %>
+
+  <%= form_for task do |form| %>
+    <%= form.check_box :status, disabled: true %>
+  <% end %>
+
+  </td>
+  <td style="width: 350px">
+    <%= task.name %>
+  </td>
+  <td style="width: 20px;">
+    <%= link_to image_tag("arrow_up.png"), raise_task_path(task), method: :patch,
+          remote: true, id: "inc" %>
+    <%= link_to image_tag("arrow_down.png"), lower_task_path(task), method: :patch,
+          remote: true, id: "low" %>
+  </td>
+  <td style="width: 20px">
+    <%= link_to image_tag("pencil.png"), edit_task_path(task), id: "edit_tsk_#{task.id}",
+          data: { remote: true, toggle:  "modal", target: '#modal-window' } %>
+  </td>
+  <td style="width: 20px" >
+    <%= link_to image_tag("trash.png"), task_path(task),
+          id: "del_tsk_#{task.id}", data: { confirm: 'Are you sure?' }, method: :delete,
+          remote: true %>
+  </td>
+</tr>

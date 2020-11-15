@@ -1,0 +1,5 @@
+$('#mp_flash_message').html("<%= @flash_message %>");
+
+<% unless @task.errors.any? %>
+  $('#<%= "pr_#{@task.project_id}" %>').html("<%= j render @project %>");
+<% end %>

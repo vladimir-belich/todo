@@ -1,6 +1,6 @@
 <div class="row justify-content-md-center">
-    <table style="border: 1px solid black;">
-      <tr style="background-color: rgb(100,160,210)">
+    <table style="border: 1px solid grey;">
+      <tr style="background-color: rgb(100,160,210); height: 48px">
 
         <td style="width: 30px;">
           <%= image_tag("project_note.svg") %>
@@ -18,6 +18,9 @@
                 data: { confirm: 'Are you sure?' }, method: :delete, remote: true %>
         </td>
       </tr>
+
+      <%= render 'projects/form_add_task', project: project %>
+      <%= render project.tasks %>
     </table>
 </div>
 <div class="row" style="height: 30px"></div>

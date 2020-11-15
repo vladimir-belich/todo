@@ -3,4 +3,9 @@ Rails.application.routes.draw do
   root to: 'projects#index'
 
   resources :projects
+  resources :tasks, except: [:show, :index]
+  resources :tasks do
+    patch 'raise', on: :member
+    patch 'lower', on: :member
+  end
 end
