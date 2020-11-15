@@ -29,7 +29,7 @@ class TasksController < ApplicationController
     @task.update(task_params)
 
     respond_to do |format|
-      format.js do 
+      format.js do
         @project = @task.project
         @flash_message = @task.errors.full_messages.join('\n')
       end

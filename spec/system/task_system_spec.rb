@@ -11,7 +11,6 @@ RSpec.describe Task, type: :system do
     click_on 'Sign up'
   end
 
-
   it 'creates the project', js: true do
     sign_in
 
@@ -30,7 +29,7 @@ RSpec.describe Task, type: :system do
     it 'adds a task to project', js: true do
       sign_in
 
-      find("#pr_#{project.id}").find("#new_task_name").fill_in with: 'New task'
+      find("#pr_#{project.id}").find('#new_task_name').fill_in with: 'New task'
       find("#pr_#{project.id}").click_on 'Add Task'
 
       expect(page).to have_content 'New task'
@@ -57,7 +56,7 @@ RSpec.describe Task, type: :system do
       sign_in
 
       click_on "edit_tsk_#{task.id}"
-      find("#task_status").set(true)
+      find('#task_status').set(true)
       click_on 'Update Task'
 
       expect(find("#tsk_#{task.id}")).to have_field('task_status', with: 1, disabled: true)
@@ -68,29 +67,29 @@ RSpec.describe Task, type: :system do
       sign_in
 
       click_on "edit_tsk_#{task.id}"
-      fill_in 'task_deadline', with: "11-15-2020"
+      fill_in 'task_deadline', with: '11-15-2020'
       click_on 'Update Task'
       sleep(0.1)
 
-      expect(task.reload).to have_attributes(deadline: Date.parse("2020-11-15"))
+      expect(task.reload).to have_attributes(deadline: Date.parse('2020-11-15'))
     end
 
     it 'increases the priority of the task', js: true do
       sign_in
 
-      find("#tsk_#{task.id}").find("#inc").click
+      find("#tsk_#{task.id}").find('#inc').click
       sleep(0.1)
 
-      expect{ task.reload }.to change{ task.priority }.from(1).to(0)
+      expect { task.reload }.to change { task.priority }.from(1).to(0)
     end
 
     it 'lowervs the priority of the task', js: true do
       sign_in
 
-      find("#tsk_#{task.id}").find("#low").click
+      find("#tsk_#{task.id}").find('#low').click
       sleep(0.1)
 
-      expect{ task.reload }.to change{ task.priority }.from(0).to(1)
+      expect { task.reload }.to change { task.priority }.from(0).to(1)
     end
   end
 
@@ -107,7 +106,7 @@ RSpec.describe Task, type: :system do
 
       expect(page).not_to have_content task.name
       expect(Task.exists?(task.id)).to be false
-     end
+    end
   end
 
   def sign_in
